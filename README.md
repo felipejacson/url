@@ -1,9 +1,15 @@
-# url
+# URL
 
-To run this project use:
+## Getting Started
 
+To run this project use: 
+
+```
 mvn spring-boot:run
+```
 
-THIS APPLICATION MUST BE USED WITH THIS PROJECT:
+## Dependency
 
-https://github.com/felipejacson/url-rest
+**THIS APPLICATION MUST BE USED WITH THIS PROJECT:**
+
+* **url-rest(https://github.com/felipejacson/url-rest)**
