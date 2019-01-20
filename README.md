@@ -11,7 +11,7 @@ mvn spring-boot:run
 ## Using the URL Shortener
 
 * The first step is to start the dependency.
-* The URL Shortener uses the id of register or a friendly name and can be accessed in thi URL:
+* The URL Shortener uses the id of the register or the friendly name and can be accessed in with the URLs:
 * **/url/{id}**
 * **/url/{friendlyName}**
 
