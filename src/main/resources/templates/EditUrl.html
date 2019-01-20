@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <head>
+        <meta charset="UTF-8">
+        <!--[if IE]>
+        <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'><![endif]-->
+        <title> URL Shortner </title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+        <!-- CSS -->
+        <link rel="stylesheet" type="text/css" th:href="@{/assets/bootstrap/css/bootstrap.css}">
+        <link rel="stylesheet" type="text/css" th:href="@{/assets/helpers/spacing.css}">
+		<link rel="stylesheet" type="text/css" th:href="@{/assets/helpers/colors.css}">
+		<link rel="stylesheet" type="text/css" th:href="@{/assets/helpers/utils.css}">
+        <link rel="stylesheet" type="text/css" th:href="@{/assets/css/url.css}">
+        <link rel="stylesheet" type="text/css" th:href="@{/assets/icons/fontawesome/fontawesome.css}">
+        <link rel="stylesheet" type="text/css" th:href="@{/assets/icons/elusive/elusive.css}">
+    </head>
+</head>
+<body>
+<div>
+    <div id="page-wrapper">
+        <div id="page-content-wrapper">
+            <div id="page-content">
+                <div class="container">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">New Url</h3>
+                        </div>
+                        <div class="panel-body">
+							<form id="form" class="form-horizontal bordered-row" th:action="@{/save}" th:object="${url}" method="post" data-parsley-validate="">
+								<div class="row">
+									<div class="col-md-6">
+										<div class="form-group">
+											<label class="col-sm-3 control-label">Id</label>
+											<div class="col-sm-2">
+												<input type="number" class="form-control" th:field="*{id}" readonly>
+											</div>
+										</div>
+										<div class="form-group">
+											<label class="col-sm-3 control-label">URL</label>
+											<div class="col-sm-9">
+												<input type="url" class="form-control" th:field="*{url}">
+											</div>
+										</div>
+										<div class="form-group">
+											<label class="col-sm-3 control-label">Friendly Name</label>
+											<div class="col-sm-9">
+												<input type="text" class="form-control" th:field="*{friendlyName}">
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="bg-default content-box text-center pad5A mrg10T">
+									<button class="btn btn-success">Save</button>
+									<a class="btn btn-danger" th:href="@{/list}">Cancel</a>
+								</div>
+							</form>
+                        </div>
+                    </div>
+					<script type="text/javascript" th:src="@{/assets/js-core/jquery-core.js}"></script>
+					<script type="text/javascript" th:src="@{/assets/widgets/notify/bootstrap-notify.min.js}"></script>
+					<th:block th:if="${message != null}" th:include="fragments/App :: message"></th:block>
+					<script type="text/javascript" th:src="@{/assets/js-core/jquery-core.js}"></script>
+					<script type="text/javascript" th:src="@{/assets/widgets/parsley/parsley.js}"></script>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- JS -->
+<script type="text/javascript" th:src="@{/assets/bootstrap/js/bootstrap.js}"></script>
+
+</body>
+</html>
